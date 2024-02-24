@@ -131,6 +131,7 @@ static void showbar(const Arg *arg);
 static void spawn(const Arg *arg);
 static int textnw(const char *text, unsigned int len);
 static void toggle(const Arg *arg);
+static void togglebar(const Arg *arg);
 static void unmanage(int c);
 static void unmapnotify(const XEvent *e);
 static void updatenumlockmask(void);
@@ -1128,6 +1129,13 @@ void
 showbar(const Arg *arg)
 {
   barvisibility = arg->i;
+  drawbar();
+}
+
+void
+togglebar(const Arg *arg)
+{
+  barvisibility = barvisibility ? 0 : 1;
   drawbar();
 }
 
