@@ -36,8 +36,8 @@ static Bool npisrelative  = True;
 #define MODKEY ControlMask|Mod1Mask
 static const Key keys[] = {
 	/* modifier             key        function     argument */
-	{ MODKEY|ShiftMask,     XK_Return, focusonce,   { 0 } },
-	{ MODKEY|ShiftMask,     XK_Return, spawn,       { 0 } },
+	{ MODKEY,               XK_Return, focusonce,   { 0 } },
+	{ MODKEY,               XK_Return, spawn,       { 0 } },
 
 	{ MODKEY|ShiftMask,     XK_l,      rotate,      { .i = +1 } },
 	{ MODKEY|ShiftMask,     XK_h,      rotate,      { .i = -1 } },
@@ -63,14 +63,15 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,     XK_u,      toggle,      { .v = (void*) &urgentswitch } },
 
 	{ MODKEY,               XK_F11,    fullscreen,  { 0 } },
-  { MODKEY,               XK_Shift_L, showbar,    { .i = 1 } },
-  { MODKEY,               XK_t,       togglebar,  { 0 } },
+  { ControlMask,          XK_Alt_L,  showbar,    { .i = 1 } },
+  { MODKEY,               XK_t,      togglebar,  { 0 } },
  };
 
 static Key keyreleases[] = {
-	/* modifier             key          function     argument */
-//	{ 0,                    XK_Shift_L,  NULL,   { 0 } },
-  { MODKEY|ShiftMask,     XK_Shift_L,  showbar,     { .i = 0 } },
-  { MODKEY|ShiftMask,     XK_Control_L,  showbar,     { .i = 0 } },
+	/* modifier              key           function     argument */
+//{ 0,                     XK_Shift_L,   NULL,        { 0 } },
+  { MODKEY,                XK_Alt_L,     showbar,     { .i = 0 } },
+  { MODKEY,                XK_Control_L, showbar,     { .i = 0 } },
+//  { 0,                     XK_Alt_L,     showbar,     { .i = 0 } },
  
 };
