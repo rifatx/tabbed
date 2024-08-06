@@ -40,7 +40,9 @@ static const Key keys[] = {
 	{ MODKEY,               XK_Return, spawn,       { 0 } },
 
 	{ MODKEY|ShiftMask,     XK_l,      rotate,      { .i = +1 } },
+	{ MODKEY,               XK_Right,  rotate,      { .i = +1 } },
 	{ MODKEY|ShiftMask,     XK_h,      rotate,      { .i = -1 } },
+	{ MODKEY,               XK_Left,   rotate,      { .i = -1 } },
 	{ MODKEY|ShiftMask,     XK_j,      movetab,     { .i = -1 } },
 	{ MODKEY|ShiftMask,     XK_k,      movetab,     { .i = +1 } },
 	{ MODKEY,               XK_Tab,    rotate,      { .i = 0 } },
